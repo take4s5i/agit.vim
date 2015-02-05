@@ -112,7 +112,7 @@ function! s:git.stat(hash) dict
   elseif a:hash ==# 'nextpage'
     let stat = ''
   else
-    let stat = agit#git#exec('show --oneline --stat --date=iso --pretty=format: '. a:hash, self.git_dir)
+    let stat = agit#git#exec('show --oneline --stat --date=iso --pretty=format: ' . g:agit_diff_option . ' ' . a:hash, self.git_dir)
     let stat = substitute(stat, '^[\n\r]\+', '', '')
   endif
   return stat
@@ -126,7 +126,7 @@ function! s:git.diff(hash) dict
   elseif a:hash ==# 'nextpage'
     let diff = ''
   else
-    let diff = agit#git#exec('show -p ' . a:hash, self.git_dir)
+    let diff = agit#git#exec('show -p '. g:agit_diff_option .' ' . a:hash, self.git_dir)
   endif
   return diff
 endfunction
