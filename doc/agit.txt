@@ -241,6 +241,11 @@ g:agit_skip_empty_line				*g:agit_skip_empty_line*
 	|agit-log| buffer.
 	default value: 1
 
+g:agit_diff_option				*g:agit_diff_option*
+	Showing |agit-diff| and |agit-stat| buffer, Agit pass its value to git-show command.
+	For instance, setting '-w' to this variable can use ignore whitespace difference.
+	default value: ''
+
 
 ==============================================================================
 TODO						*agit-todo*
